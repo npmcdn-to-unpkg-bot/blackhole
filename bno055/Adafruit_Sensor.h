@@ -20,8 +20,13 @@
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
 
+//#if ARDUINO >= 100
+// #include "Arduino.h"
+// #include "Print.h"
+//#else
+// #include "WProgram.h"
+//#endif
 #include "application.h"
-
 /* Intentionally modeled after sensors.h in the Android API:
  * https://github.com/android/platform_hardware_libhardware/blob/master/include/hardware/sensors.h */
 
@@ -147,4 +152,3 @@ class Adafruit_Sensor {
 };
 
 #endif
-

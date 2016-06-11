@@ -16,16 +16,17 @@
 
   MIT license, all text above must be included in any redistribution
  ***************************************************************************/
+#define ARDUINO 200
+//#if ARDUINO >= 100
+// #include "Arduino.h"
+//#else
+// #include "WProgram.h"
+//#endif
 
-#if ARDUINO >= 100
- #include "Arduino.h"
-#else
- #include "application.h"
-#endif
-
+#include "application.h"
 #include <math.h>
 #include <limits.h>
-#include <SPI.h>
+
 #include "Adafruit_BNO055.h"
 
 /***************************************************************************
