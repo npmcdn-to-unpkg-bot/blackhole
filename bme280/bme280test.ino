@@ -28,9 +28,9 @@
 
 #define SEALEVELPRESSURE_HPA (1013.25)
 
-Adafruit_BME280 bme; // I2C
+// Adafruit_BME280 bme; // I2C
 //Adafruit_BME280 bme(BME_CS); // hardware SPI
-//Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO,  BME_SCK);
+Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO,  BME_SCK);
 
 void setup() {
   Serial.begin(9600);
