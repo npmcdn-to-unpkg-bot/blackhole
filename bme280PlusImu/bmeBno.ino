@@ -68,6 +68,8 @@ Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO,  BME_SCK);
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
+char * eventOut;
+
 void setup() {
   Serial.begin(9600);
 
@@ -104,22 +106,9 @@ void loop(void)
   sensors_event_t event;
   bno.getEvent(&event);
 
-  /* Display the floating point data */
-  Serial.print("X: ");
-  Serial.print(event.orientation.x, 4);
-  Serial.print("\tY: ");
-  Serial.print(event.orientation.y, 4);
-  Serial.print("\tZ: ");
-  Serial.print(event.orientation.z, 4);
+  sprintf(eventOut, "{\"x\":\"%.7f\",\"y:\":%.7f\",\"z\":\"%.7f\"}",  event.orientation.x,  event.orientation.y,  event.orientation.z);
 
-  /* Optional: Display calibration status */
-  displayCalStatus();
-
-  /* Optional: Display sensor status (debug only) */
-  //displaySensorStatus();
-
-  /* New line for the next sample */
-  Serial.println("");
+  Particle.publish("imu", eventOut);
 
   /* Wait the specified delay before requesting nex data */
   delay(BNO055_SAMPLERATE_DELAY_MS);
