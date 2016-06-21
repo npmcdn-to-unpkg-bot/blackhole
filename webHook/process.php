@@ -42,7 +42,7 @@ function validate($in){
 		return false;
 	}
 	
-	if(!in_array($in['event'], array('temp', 'imu', 'pressure')))
+	if(!in_array($in['event'], array('bme380', 'imu')))
 	{
 		return false;
 	}

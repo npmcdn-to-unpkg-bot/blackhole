@@ -1,21 +1,10 @@
 /***************************************************************************
-  This is a library for the BME280 humidity, temperature & pressure sensor
-
-  Designed specifically to work with the Adafruit BME280 Breakout
-  ----> http://www.adafruit.com/products/2650
-
-  These sensors use I2C or SPI to communicate, 2 or 4 pins are required
-  to interface.
-
   Adafruit invests time and resources providing this open source code,
   please support Adafruit andopen-source hardware by purchasing products
   from Adafruit!
 
   Written by Limor Fried & Kevin Townsend for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
-
-  This file was modified by Markus Haack (https://github.com/mhaack)
-  in order to work with Particle Photon & Core.
  ***************************************************************************/
 
 #include "Adafruit_Sensor.h"
@@ -35,40 +24,14 @@
 #include "imumaths.h"
 
 // Adafruit_BME280 bme; // I2C
-//Adafruit_BME280 bme(BME_CS); // hardware SPI
+// Adafruit_BME280 bme(BME_CS); // hardware SPI
 Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO,  BME_SCK);
 
-/* This driver uses the Adafruit unified sensor library (Adafruit_Sensor),
-   which provides a common 'type' for sensor data and some helper functions.
-
-   To use this driver you will also need to download the Adafruit_Sensor
-   library and include it in your libraries folder.
-
-   You should also assign a unique ID to this sensor for use with
-   the Adafruit Sensor API so that you can identify this particular
-   sensor in any data logs, etc.  To assign a unique ID, simply
-   provide an appropriate value in the constructor below (12345
-   is used by default in this example).
-
-   Connections
-   ===========
-   Connect SCL to analog 5
-   Connect SDA to analog 4
-   Connect VDD to 3-5V DC
-   Connect GROUND to common ground
-
-   History
-   =======
-   2015/MAR/03  - First release (KTOWN)
-   2015/AUG/27  - Added calibration and system status helpers
-*/
-
-/* Set the delay between fresh samples */
 #define BNO055_SAMPLERATE_DELAY_MS (100)
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
-char * eventOut;
+char eventOut[64];
 
 void setup() {
   Serial.begin(9600);
@@ -80,17 +43,10 @@ void setup() {
   /* Initialise the sensor */
   if(!bno.begin())
   {
-    /* There was a problem detecting the BNO055 ... check your connections */
     Serial.print("Ooops, no BNO055 detected ... Check your wiring or I2C ADDR!");
   }
 
   delay(1000);
-
-  /* Display some basic information on this sensor */
-  displaySensorDetails();
-
-  /* Optional: Display current status */
-  displaySensorStatus();
 
   bno.setExtCrystalUse(true);
 }
@@ -110,28 +66,14 @@ void loop(void)
 
   Particle.publish("imu", eventOut);
 
-  /* Wait the specified delay before requesting nex data */
-  delay(BNO055_SAMPLERATE_DELAY_MS);
+/* Wait the specified delay before requesting nex data */ 
+    delay(BNO055_SAMPLERATE_DELAY_MS);
 
-    Serial.print("Temperature = ");
-    Serial.print(bme.readTemperature());
-    Serial.println(" *C");
+    sprintf(eventOut, "{\"temp\":\"%.7f\",\"pressure:\":%.7f\",\"altitude\":\"%.7f\",\"humidity\":\"%.7f\"}",  bme.readTemperature(), (bme.readPressure() / 100.0), bme.readAltitude(SEALEVELPRESSURE_HPA), bme.readHumidity() );
+     Particle.publish("bme280", eventOut);
+    delay(15000);
 
-    Serial.print("Pressure = ");
-
-    Serial.print(bme.readPressure() / 100.0F);
-    Serial.println(" hPa");
-
-    Serial.print("Approx. Altitude = ");
-    Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
-    Serial.println(" m");
-
-    Serial.print("Humidity = ");
-    Serial.print(bme.readHumidity());
-    Serial.println(" %");
-
-    Serial.println();
-    delay(2000);
+   // delay(1000);
 }
 
 
