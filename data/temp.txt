@@ -1,0 +1,43 @@
+Opening serial monitor for com port: "/dev/ttyACM1"
+3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		CALIBRATION: Sys=0 Gyro=3 Accel=0 Mag=0
+X: 12.56 Y: -3.12 Z: -0.44		
