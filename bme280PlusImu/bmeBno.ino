@@ -6,6 +6,7 @@
   Written by Limor Fried & Kevin Townsend for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
  ***************************************************************************/
+#define DEBUG_OUTPUT
 
 #include "Adafruit_Sensor.h"
 #include "Adafruit_BME280.h"
@@ -64,13 +65,24 @@ void loop(void)
 
   sprintf(eventOut, "{\"x\":\"%.7f\",\"y:\":%.7f\",\"z\":\"%.7f\"}",  event.orientation.x,  event.orientation.y,  event.orientation.z);
 
-  Particle.publish("imu", eventOut);
+  #if defined DEBUG_OUTPUT
+       Serial.println( eventOut );
+  #else
+  	Particle.publish("imu", eventOut);
+  #endif
+
 
 /* Wait the specified delay before requesting nex data */ 
     delay(BNO055_SAMPLERATE_DELAY_MS);
 
     sprintf(eventOut, "{\"temp\":\"%.7f\",\"pressure:\":%.7f\",\"altitude\":\"%.7f\",\"humidity\":\"%.7f\"}",  bme.readTemperature(), (bme.readPressure() / 100.0), bme.readAltitude(SEALEVELPRESSURE_HPA), bme.readHumidity() );
+
+  #if defined DEBUG_OUTPUT
+     Serial.println( eventOut );
+  #else
      Particle.publish("bme280", eventOut);
+  #endif
+
     delay(15000);
 
    // delay(1000);
