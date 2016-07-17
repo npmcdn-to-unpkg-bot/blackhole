@@ -92,13 +92,13 @@ void loop(void)
   imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
 
   /* Display the floating point data */
-  Serial.print("X: ");
+  Serial.print("X:");
   Serial.print(euler.x());
-  Serial.print(" Y: ");
+  Serial.print(" Y:");
   Serial.print(euler.y());
-  Serial.print(" Z: ");
+  Serial.print(" Z:");
   Serial.print(euler.z());
-  Serial.print("\t\t");
+  Serial.print(" ");
 
 // pressure temp bme280
   Serial.print("temp:");
@@ -107,17 +107,16 @@ void loop(void)
 
   Serial.print("pres:");
   Serial.print(bme.readPressure() / 100.0F);
-  Serial.print(":hPa");
+  Serial.print(":hPa ");
 
   Serial.print("alti:");
   Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
-  Serial.print(":m");
+  Serial.print(":m ");
 
   Serial.print("humd:");
   Serial.print(bme.readHumidity());
-  Serial.println(":%");
+  Serial.print(":% ");
 
-  Serial.println();
 // gps
     bool isValidGPS = false;
     
@@ -139,14 +138,15 @@ void loop(void)
     
         gps.f_get_position(&lat, &lon, &age);
         
-        sprintf(szInfo, "%.6f,%.6f", (lat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : lat), (lon == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : lon));
-	Serial.println(szInfo);
+        sprintf(szInfo, "lat:%.6f lon:%.6f", (lat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : lat), (lon == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : lon));
+	Serial.print(szInfo);
     } else {
         // Not a vlid GPS location, jsut pass 0.0,0.0
         // This is not correct because 0.0,0.0 is a valid GPS location, we have to pass a invalid GPS location
         // and check it at the client side
         sprintf(szInfo, "0.0,0.0");
-	Serial.println(szInfo);
+	Serial.print(szInfo);
     }
+  Serial.println();
   delay(1000);
 }
