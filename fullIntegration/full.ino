@@ -100,49 +100,22 @@ void loop(void)
   Serial.print(euler.z());
   Serial.print("\t\t");
 
-  /*
-  // Quaternion data
-  imu::Quaternion quat = bno.getQuat();
-  Serial.print("qW: ");
-  Serial.print(quat.w(), 4);
-  Serial.print(" qX: ");
-  Serial.print(quat.y(), 4);
-  Serial.print(" qY: ");
-  Serial.print(quat.x(), 4);
-  Serial.print(" qZ: ");
-  Serial.print(quat.z(), 4);
-  Serial.print("\t\t");
-  */
-
-  /* Display calibration status for each sensor. */
-  uint8_t system, gyro, accel, mag = 0;
-  bno.getCalibration(&system, &gyro, &accel, &mag);
-  Serial.print("CALIBRATION: Sys=");
-  Serial.print(system, DEC);
-  Serial.print(" Gyro=");
-  Serial.print(gyro, DEC);
-  Serial.print(" Accel=");
-  Serial.print(accel, DEC);
-  Serial.print(" Mag=");
-  Serial.println(mag, DEC);
-
 // pressure temp bme280
-  Serial.print("Temperature = ");
+  Serial.print("temp:");
   Serial.print(bme.readTemperature());
-  Serial.println(" *C");
+  Serial.print(":*C ");
 
-  Serial.print("Pressure = ");
-
+  Serial.print("pres:");
   Serial.print(bme.readPressure() / 100.0F);
-  Serial.println(" hPa");
+  Serial.print(":hPa");
 
-  Serial.print("Approx. Altitude = ");
+  Serial.print("alti:");
   Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
-  Serial.println(" m");
+  Serial.print(":m");
 
-  Serial.print("Humidity = ");
+  Serial.print("humd:");
   Serial.print(bme.readHumidity());
-  Serial.println(" %");
+  Serial.println(":%");
 
   Serial.println();
 // gps
