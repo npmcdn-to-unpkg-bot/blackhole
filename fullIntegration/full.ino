@@ -144,7 +144,7 @@ void loop(void)
         // Not a vlid GPS location, jsut pass 0.0,0.0
         // This is not correct because 0.0,0.0 is a valid GPS location, we have to pass a invalid GPS location
         // and check it at the client side
-        sprintf(szInfo, "0.0,0.0");
+        sprintf(szInfo, "lat:0.0 lon:0.0");
 	Serial.print(szInfo);
     }
   Serial.println();
