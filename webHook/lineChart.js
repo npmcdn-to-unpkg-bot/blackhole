@@ -2,7 +2,7 @@
 
 angular.module('mainApp')
 
-    .controller('lineChartCtrl', function($scope, $http){
+    .controller('lineChartCtrl', function($scope, $http, $interval){
         $scope.options = {
             chart: {
                 type: 'lineChart',
@@ -80,21 +80,16 @@ angular.module('mainApp')
             //Line chart data should be sent as an array of series objects.
              $scope.data = [
                 {
-                    values: x,      //values - represents the array of {x,y} data points
-                    key: 'Acc X', //key  - the name of the series.
+                    values: y,      //values - represents the array of {x,y} data points
+                    key: 'Acc Y', //key  - the name of the series.
                     color: '#ff7f0e'  //color - optional: choose your own line color.
-                },
-                {
-                    values: y,
-                    key: 'Acc Y',
-                    color: '#2ca02c'
-                },
-                {
-                    values: z,
-                    key: 'Acc Z',
-                    color: '#7777ff',
-                    area: true      //area - set to true if you want this line to turn into a filled area chart.
                 }
             ];
         };
+
+	$scope.getMoreData = function(){
+		 $http.get('/getData.php').then(cleaner, errorcb);
+	}
+
+	$interval($scope.getMoreData, 100);
     })

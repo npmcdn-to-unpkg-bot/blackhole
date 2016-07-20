@@ -25,7 +25,7 @@ if( !pg_pconnect("host=localhost port=5432 dbname=$database user=$username passw
 }
 
 $res = pg_fetch_all(
-	 	pg_query("select x, y, z, extract(epoch from date_time)/10000000 as date_time from data_full")
+	 	pg_query("select x, y, z, extract(epoch from date_time)/10000000 as date_time from data_full order by date_time desc")
 	);
 
 if(!$res){

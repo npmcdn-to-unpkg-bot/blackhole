@@ -21,10 +21,10 @@ foreach($full as $temp){
  $b = explode(':', $temp);
  $clean[$b[0]] = $b[1];
 }
-$res = pg_query_params("insert into data_full (date_time, x) values($2, $1)", [$clean['X'], 'now()']);
+$res = pg_query_params("insert into data_full (date_time, x, y, z) values($1, $2, $3, $4)", ['now()', $clean['X'],$clean['Y'], $clean['Z']]);
 if(!$res){
         print pg_last_error();
 }
 function validate($in){
-  return true;
+	return true;
 }
