@@ -15,7 +15,11 @@
     <div ng-controller="lineChartCtrl">
         <nvd3 options="options" data="data"></nvd3>
     </div>
+    <div ng-controller="lineChartCtrl">
+        <nvd3 options="options" data="data"></nvd3>
+    </div>
 </div>
+
 <?php
 include("credentials.php");
 
@@ -33,7 +37,7 @@ if(!$res){
 	print "no database connection";
 	exit(20);
 }
-
+/*
 print "<table border=1>";
 foreach($res as $obj)
 {
@@ -45,6 +49,7 @@ foreach($res as $obj)
 	print "</tr>";
 }
 print "</table>";
+*/
 ?>
 <body>
 </html>

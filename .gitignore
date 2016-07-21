@@ -1,2 +1,5 @@
 *.bin
 webHook/credentials.php
+webHook/bower_components/
+webHook/node_modules/
+.idea/
