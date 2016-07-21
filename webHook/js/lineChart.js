@@ -80,10 +80,20 @@ angular.module('mainApp')
             //Line chart data should be sent as an array of series objects.
              $scope.data = [
                 {
-                    values: y,      //values - represents the array of {x,y} data points
-                    key: 'Acc Y', //key  - the name of the series.
-                    color: '#ff7f0e'  //color - optional: choose your own line color.
+                    values: x,      //values - represents the array of {x,y} data points
+                    key: 'Acc X', //key  - the name of the series.
+                    color: '#000066'  //color - optional: choose your own line color.
                 }
+                 ,                {
+                     values: y,      //values - represents the array of {x,y} data points
+                     key: 'Acc Y', //key  - the name of the series.
+                     color: '#990066'  //color - optional: choose your own line color.
+                 }
+                 ,                {
+                     values: z,      //values - represents the array of {x,y} data points
+                     key: 'Acc Z', //key  - the name of the series.
+                     color: '#336600'  //color - optional: choose your own line color.
+                 }
             ];
         };
 
@@ -91,5 +101,5 @@ angular.module('mainApp')
 		 $http.get('/getData.php').then(cleaner, errorcb);
 	}
 
-	$interval($scope.getMoreData, 100);
+	$interval($scope.getMoreData, 1000);
     })

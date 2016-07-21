@@ -1,0 +1,9 @@
+{
+  "name": "blackhole",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1"
+  }
+}

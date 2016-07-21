@@ -16,7 +16,7 @@ if( !pg_pconnect("host=localhost port=5432 dbname=$database user=$username passw
 	exit(20);
 }
 
-$res = 	pg_query("select x, y, z, extract(epoch from date_time)/100000000 as date_time from data_full order by date_time desc limit 10");
+$res = 	pg_query("select x, y, z, extract(epoch from date_time)/1000000 as date_time, temp, pressure, altitude, humidity from data_full order by date_time desc limit 10");
 
 if(!$res){
 	print pg_last_error();

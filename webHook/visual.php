@@ -5,8 +5,7 @@
 <script src="bower_components/d3/d3.js"></script>
 <script src="bower_components/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
 <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
-<script src="app.js"></script> 
-<script src="lineChart.js"></script> 
+<script src="full.js"></script>
 <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
 </head>
 <body>
@@ -15,7 +14,7 @@
     <div ng-controller="lineChartCtrl">
         <nvd3 options="options" data="data"></nvd3>
     </div>
-    <div ng-controller="lineChartCtrl">
+    <div ng-controller="discreteBarChartCtrl">
         <nvd3 options="options" data="data"></nvd3>
     </div>
 </div>
